@@ -21,7 +21,7 @@
 
 ## Introduction
 
-Project Insight is designed to create NLP as a service with code base for both front end GUI (**`streamlit`**)  and backend server (**`FastApi`**) the usage of transformers models on various downstream NLP task.
+Project Insight is designed to create NLP as a service with a code base for both front-end GUI (**`streamlit`**)  and Jupyter notebook the usage of transformers models on various downstream NLP task.
 
 The downstream NLP tasks covered:
 
@@ -44,7 +44,7 @@ The downstream NLP tasks covered:
 * **Python Code Base**: Built using `Transformers` and `Streamlit` making the complete code base in Python. Also server could run from Jupyter notebook without writing any code for deployment and API Creation.
 * **Expandable**: The Streamlit framwork is desinged in a way that code can be expanded and Streamlit also provides us (**`@st.cache`**) that we could use to cache the models which saves us a lot of time and use of more Transformer based models will make the models use in app more changable with writing much costum code and it will be available in the front end app automatically. 
 * **Micro-Services**: The backend is designed with a microservices architecture, with no dockerfile for any of the service and leveraging colab ipython for execution we can run the notebook as a server independently with all models running independently.
-    - This makes it easy to update, manitain, start, stop different NLP services.
+    - This makes it easy to update, maintain, start, stop different NLP services.
 
 
 <a id='section02'></a>
@@ -59,51 +59,25 @@ The downstream NLP tasks covered:
 ### Setup and Documentation
 
 1. **Download the models**
-    - Download the models from [here](https://drive.google.com/drive/folders/1Lc7kvfNnMRgA7tkPR5zaSAoSjC2sCudI?usp=sharing)
-    - Save them in the specific model folders inside the `src_fastapi` folder.
-
+    - Download the models from [here](https://drive.google.com/drive/folders/1-aeyS6ImGv0nTK3KLGJ0yiYZ1Eh7XPkm?usp=sharing)
+    - Save them in your specific model folder.
+    
 2. **Running the backend service.**
-    - Go to the `src_fastapi` folder
-    - Run the `Docker Compose` comnand
+    - Go to the `Eluvio_data_science.ipynb`
+    - Run the all of the `Cells`
 
-    ```console  
-    $ cd src_fastapi
-    src_fastapi:~$ sudo docker-compose up -d
-    ```
-
-3. **Running the frontend app.**
+3. **Running the frontend**
+    - Its simple to run(also you already did it)
     <!---
-    - Front end is a **`WIP`** as a change in the backend architecture.
-    - Should be up in a few days.
+    - After running this 'streamlit run "app.py"' cell
+    - Go to the link in just upper cell's output which should be 'Execute the next cell and the go to the following URL: https://649b954f8f89.ngrok.io'
+    - Click on this link
     --->
-    - Go to the `src_streamlit` folder
-    <!---
-    - Create the docker image from the `Docker File`
-    - Then execute the docker image to spin up a container.
-    ```console  
-    $ cd src_streamlit
-    src_streamlit:~$ sudo docker build -t streamlit_app .
-    src_streamlit:~$ sudo docker run -d --name streamlit_app streamlit_app
-    ```
-    --->
-    - Run the app with the streamlit run command
-    ```console  
-    $ cd src_streamlit
-    src_streamlit:~$ streamlit run NLPfily.py
-    ```
-
-4. **Access to Fastapi Documentation**: Since this is a microservice based design, every NLP task has its own seperate documentation
-    - News Classification: http://localhost:8080/api/v1/classification/docs
-    - Sentiment Analysis: http://localhost:8080/api/v1/sentiment/docs
-    - NER: http://localhost:8080/api/v1/ner/docs
-    - Summarization: http://localhost:8080/api/v1/summary/docs
-
-
+    
 <a id='section03'></a>
 
 ## Project Details
 
-<a id='section03a'></a>
 
 ### Demonstration
 
@@ -111,33 +85,5 @@ The downstream NLP tasks covered:
 <img alt="Project Insight Demo" src="meta/streamlit-NLPfiy.gif">
 </p>
 
-<a id='section03b'></a>
 
-### Directory Details
-
-* **Front End**: Front end code is in the `src_streamlit` folder. Along with the `Dockerfile` and `requirements.txt`
-
-* **Back End**: Back End code is in the `src_fastapi` folder.
-    * This folder contains directory for each task: `Classification`, `ner`, `summary`...etc
-    * Each NLP task has been implemented as a microservice, with its own fastapi server and requirements and Dockerfile so that they can be independently mantained and managed.
-    * Each NLP task has its own folder and within each folder each trained model has 1 folder each. For example:
-    ```
-    - sentiment
-        > app
-            > api
-                > distilbert
-                    - model.bin
-                    - network.py
-                    - tokeniser files
-                >roberta
-                    - model.bin
-                    - network.py
-                    - tokeniser files
-    ```
-    * For each new model under each service a new folder will have to be added.
-    * Each folder model will need the following files:
-        * Model bin file.
-        * Tokenizer files
-        * `network.py` Defining the class of the model if customised model used.
-
-    * `config.json`: This file contains the details of the models in the backend and the dataset they are trained on.
+<a id='section03'></a>
