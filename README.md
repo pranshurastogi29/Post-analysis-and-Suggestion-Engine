@@ -1,17 +1,9 @@
-<h1 align="center">Project Insight</h1>
+<h1 align="center">Project Assignment from ELuv.io</h1>
 
-<h2 align="center">NLP as a Service</h2>
-
-<p align="center">
-<img alt="Project Insight" src="meta/Insight.png">
-</p>
+<h2 align="center">text-generation-analysis(NLP)models as a Service</h2>
 
 <p align="center">
-<a href="https://github.com/abhimishra91/insight/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/abhimishra91/insight"></a>
-<a href="https://github.com/abhimishra91/insight/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/abhimishra91/insight"></a>
-<a href="https://github.com/abhimishra91/insight/stargazers"><img alt="Github Stars" src="https://img.shields.io/github/stars/abhimishra91/insight"></a>
-<a href="https://github.com/abhimishra91/insight/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/abhimishra91/insight"></a>
-<a href="https://github.com/abhimishra91/insight/"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
+<img alt="Project Insight" src="meta/meta.png">
 </p>
 
 ## Contents
@@ -23,8 +15,6 @@
 3. [Project Details](#section03)
     - [Demonstration](#section03a)
     - [Directory Details](#section03b)
-    - [How to Add a new Model](#section03c)
-4. [License](#section04)
 
 
 <a id='section01'></a>
@@ -35,28 +25,26 @@ Project Insight is designed to create NLP as a service with code base for both f
 
 The downstream NLP tasks covered:
 
-* News Classification
+* Sentence Completion(with seed text and context)
 
-* Entity Recognition
+* Upvotes Prediction(Regression/Classification)
+
+* Post Generation(with selected subject and upvotes)
 
 * Sentiment Analysis
 
-* Summarization
+* Topic Prediction(Zero Shot) `To Do`
 
-* Information Extraction `To Do`
-
-The user can select different models from the drop down to run the inference.
-
-The users can also directly use the backend fastapi server to have a command line inference. 
+* Many more thing like NER, Clustering, Ranking etc could be done
 
 <a id='section01a'></a>
 
 ### Features of the solution
 
-* **Python Code Base**: Built using `Fastapi` and `Streamlit` making the complete code base in Python.
-* **Expandable**: The backend is desinged in a way that it can be expanded with more Transformer based models and it will be available in the front end app automatically. 
-* **Micro-Services**: The backend is designed with a microservices architecture, with dockerfile for each service and leveraging on Nginx as a reverse proxy to each independently running service.
-    - This makes it easy to update, manitain, start, stop individual NLP services.
+* **Python Code Base**: Built using `Transformers` and `Streamlit` making the complete code base in Python. Also server could run from Jupyter notebook without writing any code for deployment and API Creation.
+* **Expandable**: The Streamlit framwork is desinged in a way that code can be expanded and Streamlit also provides us @st.cache that we could use to cache the models which saves us a lot of time and use of more Transformer based models will make the models use in app more changable with writing much costum code and it will be available in the front end app automatically. 
+* **Micro-Services**: The backend is designed with a microservices architecture, with no dockerfile for any of the service and leveraging colab ipython for execution we can run the notebook as a server independently with all models running independently.
+    - This makes it easy to update, manitain, start, stop different NLP services.
 
 
 <a id='section02'></a>
@@ -154,50 +142,3 @@ The users can also directly use the backend fastapi server to have a command lin
         * `network.py` Defining the class of the model if customised model used.
 
     * `config.json`: This file contains the details of the models in the backend and the dataset they are trained on.
-
-<a id='section03c'></a>
-
-### How to Add a new Model
-
-1. Fine Tune a transformer model for specific task. You can leverage the [transformers-tutorials](https://github.com/abhimishra91/transformers-tutorials)
-
-2. Save the model files, tokenizer files and also create a `network.py` script if using a customized training network.
-
-3. Create a directory within the NLP task with `directory_name` as the `model name` and save all the files in this directory.
-
-4. Update the `config.json` with the model details and dataset details.
-
-5. Update the `<service>pro.py` with the correct imports and conditions where the model is imported. For example for a new Bert model in Classification Task, do the following:
-    * Create a new directory in `classification/app/api/`. Directory name `bert`.
-    * Update `config.json` with following:
-        ```json
-        "classification": {
-        "model-1": {
-            "name": "DistilBERT",
-            "info": "This model is trained on News Aggregator Dataset from UC Irvin Machine Learning Repository. The news headlines are classified into 4 categories: **Business**, **Science and Technology**, **Entertainment**, **Health**. [New Dataset](https://archive.ics.uci.edu/ml/datasets/News+Aggregator)"
-        },
-        "model-2": {
-            "name": "BERT",
-            "info": "Model Info"
-        }
-        }
-        ```
-    * Update `classificationpro.py` with the following snippets:
-        
-        **_Only if customized class used_**
-        ```python
-        from classification.bert import BertClass
-        ```
-
-        **_Section where the model is selected_**
-        ```python
-        if model == "bert":
-            self.model = BertClass()
-            self.tokenizer = BertTokenizerFast.from_pretrained(self.path)
-        ```
-
-<a id='section04'></a>
-
-## License
-
-This project is licensed under the GPL-3.0 License - see the [LICENSE.md](https://github.com/abhimishra91/insight/blob/master/LICENSE) file for details
