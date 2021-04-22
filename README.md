@@ -33,17 +33,17 @@ The downstream NLP tasks covered:
 
 * Sentiment Analysis
 
-* Topic Prediction(Zero Shot) `To Do`
+* Topic Prediction(Zero-Shot) `To Do`
 
-* Many more thing like NER, Clustering, Ranking etc could be done
+* Many more thing like NER, Clustering, Ranking, etc could be done
 
 <a id='section01a'></a>
 
 ### Features of the solution
 
-* **Python Code Base**: Built using `Transformers` and `Streamlit` making the complete code base in Python. Also server could run from Jupyter notebook without writing any code for deployment and API Creation.
-* **Expandable**: The Streamlit framwork is desinged in a way that code can be expanded and Streamlit also provides us (**`@st.cache`**) that we could use to cache the models which saves us a lot of time and use of more Transformer based models will make the models use in app more changable with writing much costum code and it will be available in the front end app automatically. 
-* **Micro-Services**: The backend is designed with a microservices architecture, with no dockerfile for any of the service and leveraging colab ipython for execution we can run the notebook as a server independently with all models running independently.
+* **Python Code Base**: Built using `Transformers` and `Streamlit` making the complete code base in Python. Also, the server could run from the Jupyter notebook without writing any code for deployment and API Creation.
+* **Expandable**: The Streamlit framework is designed in a way that code can be expanded and Streamlit also provides us (**`@st.cache`**) that we could use to cache the models which saves us a lot of time and use of more Transformer based models will make the models use in-app more changeable with writing much custom code and it will be available in the front end app automatically. 
+* **Micro-Services**: The backend is designed with a microservices architecture, with no dockerfile for any of the services and leveraging notebooks for execution we can run the notebook as a server independently with all models running independently.
     - This makes it easy to update, maintain, start, stop different NLP services.
 
 
@@ -67,10 +67,10 @@ The downstream NLP tasks covered:
     - Run the all of the `Cells`
 
 3. **Running the frontend**
-    - Its simple to run(also you already did it)
-    <!---
+    - It's simple to run(also you already did it)
+   
     - After running this 'streamlit run "app.py"' cell
-    - Go to the link in just upper cell's output which should be 'Execute the next cell and the go to the following URL: https://649b954f8f89.ngrok.io'
+    - Go to the link in just the upper cell's output which should be 'Execute the next cell and go to the following URL: https://649b954f8f89.ngrok.io'
     - Click on this link
     --->
     
