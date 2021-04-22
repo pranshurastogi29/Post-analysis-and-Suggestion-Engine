@@ -1,4 +1,4 @@
-<h1 align="center">Project Assignment from ELuv.io</h1>
+<h1 align="center">Project Insight</h1>
 
 <h2 align="center">Post analysis and Suggestion Models as a Service</h2>
 
