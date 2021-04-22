@@ -3,7 +3,7 @@
 <h2 align="center">Text-Generation-Analysis(NLP)models as a Service</h2>
 
 <p align="center">
-<img alt="Project Insight" src="meta/meta.png">
+<img alt="Project Insight" src="meta/images.png">
 </p>
 
 ## Contents
@@ -13,8 +13,6 @@
 2. [Installation](#section02)
     - [Setup and Documentation](#section02a)
 3. [Project Details](#section03)
-    - [Demonstration](#section03a)
-    - [Directory Details](#section03b)
 
 
 <a id='section01'></a>
@@ -83,13 +81,5 @@ The downstream NLP tasks covered:
 4. `Predictive keyboard` --> I used GPT-2 model finetuned on the given dataset with 10000+ steps so the model could predict/complete the text with given seed text
 5. `Sentiment Analysis` --> Use this text generated from the Predictive keyboard to get the sentiment and score(Probability) of the Post generated used Transformers pipeline
 6. `Upvotes Prediction` --> Here I have first divided the upvotes which is numerical data and bin it into `5 Categories 0to20, 20to50, 50to100, 100to250, 250to500` the categories defined as the post might get 0 to 20 upvotes. Why I have used this because of the high variation in the Upvotes 80% of 5000000 are 0 to 20 upvotes so binning is the way to go here. Now for modeling, I have used to convert the text into embeddings with pre-trained `Distill Bert NLI model` and then use these embedding as features in and LightLGBM model. Why I go with this approach is that it's very memory efficient and significantly decreases model training time though I intend to use transformers on it too soon. So if we input the text then it gets converted into an embedding which then becomes a feature for the final prediction of these 5 categories
-7. `Post Title Generation` --> And now comes the special part of the project in this I have used Uber-research text generation code and revamp the code and converted it into a model that takes input -> (text: condition text(User enters this), subject:(Politics, technology, legal, religion, etc), Upvotes it should get:(0to20, 20to50, 50to100, 100to250, 250to500) and with these major parameters the model generates the Post title that best fits the requirements. So if you want to create a Post title starting with `"'The US'"` on a subject of `"technology"` which should lie in `"50to100"` upvotes then the model create this text = `"The US Startup is working on a new implementation of GPT-2 Models that could interact with human"` This text changes with the parameters but every text starts with the inputted text i.e `"The US"` in this case.
-
-### Demonstration
-
-<p align="center">
-<img alt="Project Insight Demo" src="meta/streamlit-NLPfiy.gif">
-</p>
-
-
+7. `Post Title Generation` --> And now comes the special part of the project in this I have used Uber-research text generation code and revamp the code and converted it into a model that takes input -> (text: condition text(User enters this), subject:(Politics, technology, legal, religion, etc), Upvotes it should get:(0to20, 20to50, 50to100, 100to250, 250to500) and with these major parameters the model generates the Post title that best fits the requirements. So if you want to create a Post title starting with `"'The US'"` on a subject of `"technology"` which should lie in `"50to100"` upvotes then the model create this text = `" The US Startup is working on a new implementation of GPT-2 Models that could interact with human"` This text changes with the parameters but every text starts with the inputted text i.e `"The US"` in this case.
 <a id='section03'></a>
