@@ -1,6 +1,6 @@
 <h1 align="center">Project Assignment from ELuv.io</h1>
 
-<h2 align="center">text-generation-analysis(NLP)models as a Service</h2>
+<h2 align="center">Text-Generation-Analysis(NLP)models as a Service</h2>
 
 <p align="center">
 <img alt="Project Insight" src="meta/meta.png">
