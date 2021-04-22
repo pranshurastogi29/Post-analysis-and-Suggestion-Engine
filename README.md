@@ -51,10 +51,9 @@ The downstream NLP tasks covered:
 
 ## Installation
 
-* Clone the Repo.
-* Run the `Docker Compose` to spin up the **Fastapi** based backend service.
-* Run the **Streamlit app** with the `streamlit run command`.
-
+* Clone/Download the Repo.
+* Run the `pip install -r requirements.txt ` to install specific versions(won't take much time)
+* In the same directory Open the **Eluvio_data_science.ipynb** and run all of the cells
 <a id='section02a'></a>
 
 ### Setup and Documentation
