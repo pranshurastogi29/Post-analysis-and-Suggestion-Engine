@@ -3,7 +3,7 @@
 <h2 align="center">Text-Generation-Analysis(NLP)models as a Service</h2>
 
 <p align="center">
-<img alt="Project Insight" src="meta/images.png">
+<img alt="Project Insight" src="meta/meta.png">
 </p>
 
 ## Contents
