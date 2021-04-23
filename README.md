@@ -51,7 +51,7 @@ The downstream NLP tasks covered:
 
 * Clone/Download the Repo.
 * Run the `pip install -r requirements.txt ` to install specific versions(won't take much time)
-* In the same directory Open the **Eluvio_data_science.ipynb** and run all of the cells
+* In the same directory Open the **Post-analysis-and-Suggestion-Engine.ipynb** and run all of the cells
 <a id='section02a'></a>
 
 ### Setup and Documentation
@@ -61,7 +61,7 @@ The downstream NLP tasks covered:
     - Save them in your specific model folder.
     
 2. **Running the backend service.**
-    - Go to the `Eluvio_data_science.ipynb`
+    - Go to the `Post-analysis-and-Suggestion-Engine.ipynb`
     - Run the all of the `Cells`
 
 3. **Running the frontend**
