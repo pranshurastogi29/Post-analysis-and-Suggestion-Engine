@@ -19,7 +19,7 @@
 
 ## Introduction
 
-Project Insight is designed to create NLP as a service with a code base for both front-end GUI (**`streamlit`**)  and Jupyter notebook the usage of transformers models on various downstream NLP task.
+Project Insight is designed to create NLP as a service with a code base for both front-end GUI (**`streamlit`**)  and Jupyter notebooks with the usage of transformers models on various downstream NLP task.
 
 The downstream NLP tasks covered:
 
