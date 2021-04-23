@@ -40,8 +40,8 @@ The downstream NLP tasks covered:
 ### Features of the solution
 
 * **Python Code Base**: Built using `Transformers` and `Streamlit` making the complete code base in Python. Also, the server could run from the Jupyter notebook without writing any code for deployment and API Creation.
-* **Expandable**: The Streamlit framework is designed in a way that code can be expanded and Streamlit also provides us (**`@st.cache`**) that we could use to cache the models which saves us a lot of time and use of more Transformer based models will make the models use in-app more changeable with writing much custom code and it will be available in the front end app automatically. 
-* **Micro-Services**: The backend is designed with a microservices architecture, with no dockerfile for any of the services and leveraging notebooks for execution we can run the notebook as a server independently with all models running independently.
+* **Expandable**: The Streamlit framework is designed in a way that codebase can be expanded and Streamlit also provides us (**`@st.cache`**) that we could use to cache the models which saves us a lot of time, also use of more Transformer based models will make the models use in-app more changeable with writing much custom code and it will be available in the front end app automatically. 
+* **Micro-Services**: The backend is designed with a microservices architecture, with no dockerfile for any of the services and leveraging notebooks for execution. we can run the notebook as a server independently with all models running independently.
     - This makes it easy to update, maintain, start, stop different NLP services.
 
 
