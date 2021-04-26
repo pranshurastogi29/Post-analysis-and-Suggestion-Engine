@@ -68,8 +68,8 @@ The downstream NLP tasks covered:
     - It's simple to run(also you already did it)
    
     - After running this 'streamlit run "app.py"' cell
-    - Go to the link in just the upper cell's output which should be 'Execute the next cell and go to the following URL: https://649b954f8f89.ngrok.io'
-    - Click on this link
+    - Go to the link in just the upper cell's output which should be 'Execute the next cell and go to the following URL: https://xyz_something_.ngrok.io'
+    - Click on that link
     --->
     
 <a id='section03'></a>
